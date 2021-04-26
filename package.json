@@ -1,0 +1,7 @@
+{
+  "name": "logsanitizer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Yasin Aydin <yaaydi@ttu.ee>",
+  "license": "MIT"
+}
