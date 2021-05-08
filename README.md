@@ -24,6 +24,14 @@ clone project
 step 2:
 yarn install
 
+step 3:
+```sh
+#oncce
+yarn run tsc
+#compile watch:
+yarn run tsc --watch
+```
+
 
 ## Future
 - Packaging
