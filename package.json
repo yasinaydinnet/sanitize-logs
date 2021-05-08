@@ -17,10 +17,7 @@
     "typescript": "^4.2.4"
   },
   "dependencies": {
-    "@robojones/nginx-log-parser": "^0.0.6",
     "@sematext/logagent": "^3.0.68",
-    "alpine": "^0.2.1",
-    "commander": "^7.2.0",
-    "nginxparser": "^2.1.0"
+    "commander": "^7.2.0"
   }
 }
