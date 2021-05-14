@@ -3,4 +3,4 @@ interface Driver {
   parseLine: Function  
 }
 
-type LogLevel = "error" | "debug"
+type LogLevel = "error" | "debug" | "log"

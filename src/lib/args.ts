@@ -3,10 +3,11 @@ import { Command } from 'commander'
 const program = new Command()
 
 program
+  .option('-r, --read_only', 'read only mode (does not modify logs)')
   .option('-d, --debug', 'output extra debugging')
   .option('-f, --file <logfile>', 'log file path')
   .option('-t, --type <logtypetype>', 'log type (-T to list all types)')
-  .option('-T, --list-types', 'list log types')
+  // .option('-T, --list_types', 'list log types') // not implemented
 
 program.parse(process.argv)
 

@@ -34,7 +34,12 @@ export default async (): Promise<void> => {
 
     const parsedLine = await driver.parseLine(line, "nginx")
 
-    console.log({line})
-    console.log({parsedLine})
+    // console.log({line})
+    // console.log({parsedLine})
+  }
+
+  if (appArguments.read_only) {
+    log("log", "App started with read only flag, not doing any changes")
+    return
   }
 }
