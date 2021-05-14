@@ -21,5 +21,12 @@
   "dependencies": {
     "@sematext/logagent": "^3.0.68",
     "commander": "^7.2.0"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "preset": "ts-jest",
+    "testEnvironment": "node"
   }
 }
