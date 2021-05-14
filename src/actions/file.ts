@@ -18,17 +18,15 @@ function checkLogTypes () {
 }
 
 export default async (): Promise<void> => {
-  await checkFilePermissions(appArguments.file)
-
   checkLogTypes()
 
-  const driver: any = detectDriverByFiletype(appArguments.type)
+  const driver: Driver = detectDriverByFiletype(appArguments.type)
 
-
-  // todo i am here
-  log("debug", "Analyzing log file and determining fields...", true)
+  await checkFilePermissions(appArguments.file)
 
   const fileContents = await readFileContents(appArguments.file)
+
+  log("debug", "Analyzing log file and determining fields...")
   const lines = fileContents.split(/\r?\n/)
 
   for await (const line of lines) {

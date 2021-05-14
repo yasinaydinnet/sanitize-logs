@@ -3,14 +3,10 @@ import { access, readFile } from 'fs/promises'
 import { constants } from 'fs'
 import { log, logAppend } from "./log"
 
-export function getFilePath (filePath: string): string {
-  return resolve(filePath)
-}
-
 export async function checkFilePermissions (filePath: string) {
   log("debug", "Checking file permissions...", true)
 
-  const fileAbsolutePath: string = getFilePath(filePath)
+  const fileAbsolutePath: string = resolve(filePath)
 
   try {
     await access(fileAbsolutePath, constants.R_OK)
@@ -28,7 +24,12 @@ export async function checkFilePermissions (filePath: string) {
 }
 
 export async function readFileContents (filePath: string) {
-  const fileAbsolutePath: string = getFilePath(filePath)
+  log("debug", "Reading file contents...", true)
 
-  return readFile(fileAbsolutePath, { encoding: "utf-8" })
+  const fileAbsolutePath: string = resolve(filePath)
+
+  const contents = readFile(fileAbsolutePath, { encoding: "utf-8" })
+
+  logAppend("debug", "OK");
+  return contents;
 }

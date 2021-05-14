@@ -1,7 +1,7 @@
 import { log, logAppend } from "../lib/log"
 const logAgent = require("./logagent")
 
-export function detectDriverByFiletype(fileType: string) {
+export function detectDriverByFiletype(fileType: string): Driver {
   log("debug", "Detecting driver...", true)
 
   let driver: Driver
