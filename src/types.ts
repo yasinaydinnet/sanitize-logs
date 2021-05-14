@@ -4,6 +4,14 @@ interface Driver {
   getPossibleFields: Function
 }
 
+interface CompositeField {
+  [key: string]: FieldType
+}
+
+interface CompositeFields {
+  [key: string]: Function
+}
+
 type FieldSafeValues = Array<string|RegExp>
 
 interface FieldType {
@@ -16,12 +24,8 @@ interface FieldTypes {
   [key: string]: FieldType
 }
 
-interface CompositeField {
-  [key: string]: FieldType
-}
-
-interface CompositeFields {
-  [key: string]: Function
-}
-
 type LogLevel = "error" | "debug" | "log"
+
+interface SensitiveFields {
+  [key: string]: FieldType|Function
+}

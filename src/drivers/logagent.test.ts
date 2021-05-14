@@ -3,7 +3,7 @@
 
 import * as driver from "./logagent"
 
-test('checks if driver works', async () => {
+test('checks if driver works', async done => {
   const nginxline = '1.1.1.13 - - [04/May/2021:09:15:28 +0300] "GET /login HTTP/1.1" 200 8851 "https://test.local" Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 5.0; Trident/3.1)"';
 
   const response: any = await driver.parseLine(nginxline, "nginx")
@@ -19,4 +19,6 @@ test('checks if driver works', async () => {
   expect(response.status_code).toBe(200)
   expect(response.size).toBe(8851)
   // expect(response["@timestamp"]).toBe(new Date("2021-05-04T06:15:28.000Z"))// Doesnt work
+
+  return done()
 })
