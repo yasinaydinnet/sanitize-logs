@@ -8,6 +8,12 @@ Interactive is not coded yet. To see options for unattended, run as:
 node . -h
 ```
 
+Current mode flags are:
+- `-r, --read_only`: read only mode (does not modify logs)')
+- `-d, --debug`: output extra debugging')
+- `-f, --file <logfile>`: log file path')
+- `-t, --type <logtypetype>`: log type (-T to list all types)')
+
 Run on sample data:
 ```sh
 node . -f test/fixtures/nginx-accesslogs.txt  -t nginx
@@ -73,7 +79,6 @@ Packaging:
 
 Interface:
 - Interactive CLI
-- Add dry run mode
 - Store past scan results and configs (parameters) in a DB (like SQLite)
 - Allow providing config parameters via config file
 
