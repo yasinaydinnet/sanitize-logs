@@ -92,3 +92,8 @@ Other projects:
 Engine:
 - Detect nginx log location(s) automatically if no --file is provided
 - Use heuristics to detect fields and values for missing drivers and plaintext files
+
+## Alternatives
+For accessing logs:
+- alpine
+- @robojones/nginx-log-parser
