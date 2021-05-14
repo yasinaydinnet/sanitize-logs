@@ -1,7 +1,7 @@
-import { appArguments, hasAppArguments } from "./lib/args";
-import { log } from "./lib/log";
+import { appArguments, hasAppArguments } from "./lib/args"
+import { log } from "./lib/log"
 
-import FileAction from "./actions/file";
+import FileAction from "./actions/file"
 
 const main = async () => {
   try {
@@ -9,7 +9,7 @@ const main = async () => {
       throw new Error("Interactive mode is unavailable.\nPlease run with '-h' to see usage")
     }
 
-    log("debug", "Started in unattended mode");
+    log("debug", "Started in unattended mode")
 
     if (appArguments.file) {
       log("debug", "Source type is: file")
@@ -21,9 +21,9 @@ const main = async () => {
 
     process.exit(0)
   } catch (error) {
-    log("error", error.message);
-    process.exit(1);
+    log("error", error.message)
+    process.exit(1)
   }
 }
 
-main();
+main()

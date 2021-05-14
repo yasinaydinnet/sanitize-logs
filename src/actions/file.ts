@@ -1,7 +1,7 @@
-import { log, logAppend } from "../lib/log";
-import { checkFilePermissions, readFileContents } from "../lib/file";
-import { detectDriverByFiletype } from "../drivers/index";
-import { appArguments } from "../lib/args";
+import { log, logAppend } from "../lib/log"
+import { checkFilePermissions, readFileContents } from "../lib/file"
+import { detectDriverByFiletype } from "../drivers/index"
+import { appArguments } from "../lib/args"
 
 function checkLogTypes () {
   log("debug", "Checking log type...", true)
@@ -14,11 +14,11 @@ function checkLogTypes () {
     throw new Error(`Log type is not supported: ${appArguments.type}`)
   }
 
-  logAppend("debug", appArguments.type);
+  logAppend("debug", appArguments.type)
 }
 
-export default async () => {
-  await checkFilePermissions(appArguments.file);
+export default async (): Promise<void> => {
+  await checkFilePermissions(appArguments.file)
 
   checkLogTypes()
 
@@ -28,11 +28,11 @@ export default async () => {
   // todo i am here
   log("debug", "Analyzing log file and determining fields...", true)
 
-  const fileContents = await readFileContents(appArguments.file);
+  const fileContents = await readFileContents(appArguments.file)
   const lines = fileContents.split(/\r?\n/)
 
   for await (const line of lines) {
-    if (!line) continue;
+    if (!line) continue
 
     const parsedLine = await driver.parseLine(line, "nginx")
 
