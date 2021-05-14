@@ -2,22 +2,21 @@ const Logagent = require('@sematext/logagent');
 
 const logAgent = new Logagent();
 
-export const name = "logAgent"
+const driver: Driver = {
+  name: "logAgent",
 
-export function parseLine (line: string, source: string) {
-  return new Promise((resolve, reject) => {
-    logAgent.parseLine(line, source, (error: Error, response: any) => {
-      if (error) return reject(error);
-
-      return resolve(response);
-    })
-  })
-}
-
-function convert(nginxLineObject) {
+  parseLine(line: string, source: string) {
+    return new Promise((resolve, reject) => {
+      logAgent.parseLine(line, source, (error: Error, response: any) => {
+        if (error) return reject(error);
   
+        return resolve(response);
+      })
+    })
+  }
 }
 
+export default driver;
 
 // type > _type (nginx)
 // client_ip > client_ip

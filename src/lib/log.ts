@@ -1,6 +1,5 @@
 import { appArguments } from "../lib/args";
 
-type LogLevel = "error" | "debug"
 
 export function logAppend(logLevel: LogLevel, message: string) {
   if (logLevel == "debug" && !appArguments.debug) return;

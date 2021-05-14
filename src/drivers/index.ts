@@ -4,11 +4,10 @@ const logAgent = require("./logagent")
 export function detectDriverByFiletype(fileType: string) {
   log("debug", "Detecting driver...", true)
 
-  let driver;
+  let driver: Driver;
 
   if (fileType === "nginx") driver = logAgent;
-
-  if (!driver) {
+  else {
     throw new Error("Log type not found: ${fileType}")
   }
 
