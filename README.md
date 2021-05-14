@@ -1,98 +1,94 @@
 # Log Sanitizer
 
-About: tbd
+Log sanitization tool PoC app
 
-## Usage
-Running in interactive mode:
+## Usage - Unattended
+Interactive is not coded yet. To see options for unattended, run as:
 ```sh
-node .
+node . -h
 ```
 
-Running unattended:
+Run on sample data:
 ```sh
-node . -f FILENAME
+node . -f test/fixtures/nginx-accesslogs.txt  -t nginx
 ```
 
 ## Development
 
 Step 0: Prequisites:
 - Node.js
+- Yarn
 
-Step 1:
-clone project
-
-step 2:
-yarn install
-
-step 3:
+To run the project:
 ```sh
-#oncce
+git clone git@github.com:yasinaydinnet/log-sanitizer-poc.git
+cd log-sanitizer-poc
+yarn install
 yarn run tsc
-#compile watch:
+```
+
+To watch changes:
+```sh
 yarn run tsc --watch
 ```
 
-step 4: run app
+To run tests:
 ```sh
-node .
+yarn test
 ```
 
 
 ## Features & Supported Formats
-by `@sematext/logagent`:
 
-sematext\/agent|containerd|dockerd/
-clickhouse/
-hyperkube/
-elasticsearch/
-solr/i
-kafka/
-hdfs/
-hbase/
-yarn/
-zookeeper|zk/
-assandra
-mongo/
-redis/i
-nexus/
-nodebb/i
-mysql/ 
-sqio\/nsq
-httpd|access_log|apache2|nginx|sematext\/frontend-app/
-flink/
-flink/
-traefik/
-tutum\/cleanup/
-rabbitmq/
-postgres/
-couchdb/
-syslog_framed|heroku/ 
-cloudfoundry.*|syslog_raw/ 
-swarm/ # catch all .log files  
-\.log/ # catch all .log files  
-logagent/
+Provided by `@sematext/logagent`:
+- web & cloud: httpd, access_log, apache2, nginx, heroku, cloudfoundry
+- db: mongo, redis, mysql, sqlio, cassandra, couchdb, postgres
+- indexing & analysis: elasticsearch, solr, hdfs, hbase, clickhouse
+- streams: flink, kafka, rabbitmq
+- config: zookeeper, traefik
+- containers: containerd, dockerd, hyperkube, tutum, swarm
+- apps: nodebb, nexus, frontend apps, npm/yarn
+- logging & monitoring: sematext/logagent, syslog
 
+## Sensitivity Levels
+- Personal secret (passwords)
+- Personal unique ID (ID code, email)
+- PII (zip code, name, surname etc)
+- 0: public
 
+## Courses Used
+- speait
+- log ve monitoring
+- linux admin, nginx etc
+- databases
+- genel programlama dersleri
 
-## Future
-- Packaging
-  - OS packages like for Arch Linux
-  - npx-style one line runs
-  - compiling/packaging into one file (executable?)
-- NPM packages
-  - get rid of old packages
-  - specify engine and npm version
+## Future Work
+
+Packaging:
+- OS packages like for Arch Linux
+- npx-style one line runs
+- compiling/packaging into one file (executable?)
+- specify engine and npm version
+- publish as npm package
+
+Interface:
 - Interactive CLI
-- Parameters
-  - Add description before option
-  - Dry run mode
-  - Detect nginx log location(s) automatically if no --file is provided
-- How others did?
-- Delete levels:
-  - Personal secret (passwords)
-  - Personal unique ID (ID code, email)
-  - PII (zip code, name, surname etc)
-- Typescript
-  - more types and untyped stuff (eg logagent driver)
+- Add dry run mode
+- Store past scan results and configs (parameters) in a DB (like SQLite)
+- Allow providing config parameters via config file
+
+Documentation
+- add sample screenshots
+
+Code/development:
+- Typescript: more types and untyped stuff (eg logagent driver)
 - (unit) Test coverage: 100%
-- different log levels
+- Provide Docker and asdf
+
+Other projects:
+- How others did?
+
+Engine:
+- Detect nginx log location(s) automatically if no --file is provided
+- Use heuristics to detect fields and values for missing drivers and plaintext files
