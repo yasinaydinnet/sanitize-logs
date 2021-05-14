@@ -30,6 +30,6 @@ export async function readFileContents (filePath: string) {
 
   const contents = readFile(fileAbsolutePath, { encoding: "utf-8" })
 
-  logAppend("debug", "OK");
-  return contents;
+  logAppend("debug", "OK")
+  return contents
 }
