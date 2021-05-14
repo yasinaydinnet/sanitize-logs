@@ -67,6 +67,7 @@ Provided by `@sematext/logagent`:
 - linux admin, nginx etc
 - databases
 - genel programlama dersleri
+- automated testing
 
 ## Future Work
 
@@ -83,7 +84,7 @@ Interface:
 - Allow providing config parameters via config file
 
 Documentation
-- add sample screenshots
+- Add sample screenshots
 
 Code/development:
 - Typescript: more types and untyped stuff (eg logagent driver)
@@ -96,6 +97,9 @@ Other projects:
 Engine:
 - Detect nginx log location(s) automatically if no --file is provided
 - Use heuristics to detect fields and values for missing drivers and plaintext files
+- Merge log type and source type (eg: nginx+file)
+- Speed up by using custom drivers (not logagent), merging regexs, caching some variables
+- Add translations for regex matches/terms for field names (ie passwort)
 
 ## Alternatives
 For accessing logs:
