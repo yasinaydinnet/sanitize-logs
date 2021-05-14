@@ -15,26 +15,25 @@ node . -f test/fixtures/nginx-accesslogs.txt  -t nginx
 
 ## Development
 
-Step 0: Prequisites:
+Prequisites:
 - Node.js
-- Yarn
 
 To run the project:
 ```sh
 git clone git@github.com:yasinaydinnet/log-sanitizer-poc.git
 cd log-sanitizer-poc
-yarn install
-yarn run tsc
+npm install
+npm run build
 ```
 
 To watch changes:
 ```sh
-yarn run tsc --watch
+npm run watch
 ```
 
 To run tests:
 ```sh
-yarn test
+npm test
 ```
 
 

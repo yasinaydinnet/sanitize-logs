@@ -5,7 +5,9 @@
   "license": "MIT",
   "main": "dist/app.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc",
+    "watch": "tsc --watch"
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.13.0",
