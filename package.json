@@ -6,6 +6,7 @@
   "main": "dist/app.js",
   "scripts": {
     "test": "jest",
+    "coverage": "jest --coverage",
     "build": "tsc",
     "watch": "tsc --watch"
   },
