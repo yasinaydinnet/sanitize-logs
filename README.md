@@ -3,6 +3,7 @@
 Log sanitization tool PoC app
 
 ## Usage - Unattended
+
 Interactive is not coded yet. To see options for unattended, run as:
 ```sh
 node . -h
