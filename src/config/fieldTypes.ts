@@ -12,12 +12,15 @@
 */
 export const fieldTypes: FieldTypes = {
   user_agent: {
+    label: "User Agent",
     sensitivity: 1,
   },
   city: {
+    label: "City",
     sensitivity: 1,
   },
   ip_address: {
+    label: "IP Address",
     sensitivity: 2,
     match_values: ["ip", "ipaddr", "ipaddress", "ip_addr"],
     safe_values_regex: [
@@ -33,11 +36,13 @@ export const fieldTypes: FieldTypes = {
     ],
   },
   username: {
+    label: "Username",
     sensitivity: 2,
     match_values: ["user", "user_name"],
     safe_values_regex: ["admin", "root", "user"],
   },
   password: {
+    label: "Password",
     sensitivity: 3,
     match_values: ["pass"],
   },

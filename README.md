@@ -22,8 +22,19 @@ $ node . -d -f test/fixtures/nginx-accesslogs.txt  -t nginx
 [debug] Detecting driver... logAgent
 [debug] Checking file permissions... OK
 [debug] Reading file contents... OK
-[debug] Analyzing log file and determining fields...
+[debug] Analyzing log file and determining fields... OK
+
 Scan is done. Following fields are found:
+Lines scanned: 30
+Sensitive values found: 7
+
+Unique sensitive values for each field is below:
+
+Field name  Sensitive Data Type  Field Sensitivity   Value     
+----------  -------------------  ------------------  ----------
+path        Password             3: Secret           MyPassw0rd
+referer     Password             3: Secret           MyPassw0rd
+client_ip   IP Address           2: Unique Personal  1.2.3.4   
 ```
 
 ## Development

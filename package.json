@@ -21,7 +21,8 @@
   },
   "dependencies": {
     "@sematext/logagent": "^3.0.68",
-    "commander": "^7.2.0"
+    "commander": "^7.2.0",
+    "console.table": "^0.10.0"
   },
   "jest": {
     "roots": [

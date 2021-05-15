@@ -18,6 +18,7 @@ interface CompositeFields {
 type FieldSafeValues = Array<string|RegExp>
 
 interface FieldType {
+  label: String,
   sensitivity: Number,
   safe_values_regex?: FieldSafeValues,
   match_values?: Array<string>
