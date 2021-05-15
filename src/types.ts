@@ -1,7 +1,8 @@
 interface Driver {
   name: string,
   parseLine: Function,
-  getPossibleFields: Function
+  sensitiveFields: SensitiveFields,
+  detectSensitiveFields: Function
 }
 
 interface CompositeField {
@@ -9,7 +10,9 @@ interface CompositeField {
 }
 
 interface CompositeFields {
-  [key: string]: Function
+  [key: string]: {
+    parse: Function
+  }
 }
 
 type FieldSafeValues = Array<string|RegExp>

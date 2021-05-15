@@ -31,12 +31,17 @@ export default async (): Promise<void> => {
 
   for await (const line of lines) {
     if (!line) continue
+    console.log({line})
 
     const parsedLine = await driver.parseLine(line, "nginx")
 
-    // console.log({line})
+    driver.detectSensitiveFields(parsedLine)
+
     // console.log({parsedLine})
   }
+
+  console.log("Scan is done. Following fields are found:")
+
 
   if (appArguments.read_only) {
     log("log", "App started with read only flag, not doing any changes")
