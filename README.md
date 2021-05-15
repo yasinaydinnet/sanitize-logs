@@ -8,15 +8,21 @@ Interactive is not coded yet. To see options for unattended, run as:
 node . -h
 ```
 
-Current mode flags are:
-- `-r, --read_only`: read only mode (does not modify logs)')
-- `-d, --debug`: output extra debugging')
-- `-f, --file <logfile>`: log file path')
-- `-t, --type <logtypetype>`: log type (-T to list all types)')
-
-Run on sample data:
+To run on sample data:
 ```sh
-node . -f test/fixtures/nginx-accesslogs.txt  -t nginx
+node . -f test/fixtures/nginx-accesslogs.txt  -t nginx -d
+```
+which should produce an output like below:
+```
+$ node . -d -f test/fixtures/nginx-accesslogs.txt  -t nginx
+[debug] Started in unattended mode
+[debug] Source type is: file
+[debug] Checking log type... nginx
+[debug] Detecting driver... logAgent
+[debug] Checking file permissions... OK
+[debug] Reading file contents... OK
+[debug] Analyzing log file and determining fields...
+Scan is done. Following fields are found:
 ```
 
 ## Development
@@ -89,20 +95,5 @@ Packaging:
 - specify engine and npm version
 - publish as npm package
 
-Interface:
-- Interactive CLI
-- Store past scan results and configs (parameters) in a DB (like SQLite)
-- Allow providing config parameters via config file
-
 Documentation
 - Add sample screenshots
-
-Code/development:
-- Provide Docker and asdf
-
-Engine:
-- Detect nginx log location(s) automatically if no --file is provided
-- Use heuristics to detect fields and values for missing drivers and plaintext files
-- Merge log type and source type (eg: nginx+file)
-- Speed up by using custom drivers (not logagent), merging regexs, caching some variables
-- Add translations for regex matches/terms for field names (ie passwort)
