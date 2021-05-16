@@ -1,7 +1,7 @@
 {
   "name": "logsanitizer",
   "version": "1.0.0",
-  "author": "Yasin Aydin <yaaydi@ttu.ee>",
+  "author": "Yasin Aydin <yasin@yasinaydin.net>",
   "license": "MIT",
   "main": "dist/app.js",
   "scripts": {
