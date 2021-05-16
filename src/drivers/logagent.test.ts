@@ -47,6 +47,7 @@ test('detectSensitiveFields', async () => {
     client_ip: [
       {
         key: "client_ip",
+        parentKey: null,
         value: "1.1.1.13",
         field: fieldTypes.ip_address
       },
@@ -54,6 +55,7 @@ test('detectSensitiveFields', async () => {
     remote_id: [
       {
         key: "remote_id",
+        parentKey: null,
         value: "remoteUser",
         field: fieldTypes.username
       },
@@ -61,6 +63,7 @@ test('detectSensitiveFields', async () => {
     user: [
       {
         key: "user",
+        parentKey: null,
         value: "httpUser",
         field: fieldTypes.username
       },
@@ -68,6 +71,7 @@ test('detectSensitiveFields', async () => {
     path: [
       {
         key: "pass",
+        parentKey: "path",
         value: "Password1",
         field: fieldTypes.password
       }

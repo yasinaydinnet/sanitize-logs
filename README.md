@@ -57,12 +57,12 @@ npm run watch
 
 ### Automated Tests
 
-To run tests:
+To run tests, run:
 ```sh
 npm test
 ```
 
-To run code coverage:
+To run code coverage, run:
 ```sh
 npm run coverage
 ```
