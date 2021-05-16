@@ -1,11 +1,15 @@
 import { appArguments, hasAppArguments } from "./lib/args"
 import { log } from "./lib/log"
-
 import FileAction from "./actions/file"
 
+
 const main = async () => {
+  const PACKAGE_VERSION = require('../package.json').version;
+  console.log(`logsanitizer@${PACKAGE_VERSION}`)
+
+  log("debug", "Debug mode enabled")
+
   try {
-    log("debug", "Debug mode enabled")
 
     if (!hasAppArguments) {
       throw new Error("Interactive mode is unavailable.\nPlease run with '-h' to see usage")
