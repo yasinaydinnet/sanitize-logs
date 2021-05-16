@@ -1,6 +1,6 @@
 {
   "name": "sanitize-logs",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "author": "Yasin Aydin <yasin@yasinaydin.net>",
   "license": "AGPL-3.0",
   "main": "dist/app.js",
