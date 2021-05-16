@@ -1,13 +1,16 @@
 {
-  "name": "logsanitizer",
+  "name": "@yasinaydin/logsanitizer",
   "version": "1.0.0",
   "author": "Yasin Aydin <yasin@yasinaydin.net>",
   "license": "MIT",
   "main": "dist/app.js",
+  "types": "dist/app.d.ts",
+  "bin": "bin/logsanitizer.sh",
   "engines": {
     "node": ">=14.0"
   },
   "scripts": {
+    "prepublishOnly": "tsc",
     "test": "jest",
     "coverage": "jest --coverage",
     "build": "tsc",
