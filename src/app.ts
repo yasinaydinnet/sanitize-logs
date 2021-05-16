@@ -5,6 +5,8 @@ import FileAction from "./actions/file"
 
 const main = async () => {
   try {
+    log("debug", "Debug mode enabled")
+
     if (!hasAppArguments) {
       throw new Error("Interactive mode is unavailable.\nPlease run with '-h' to see usage")
     }
