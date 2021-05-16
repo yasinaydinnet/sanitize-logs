@@ -2,7 +2,7 @@ import { log, logAppend } from "../lib/log"
 import { checkFilePermissions, readFileContents } from "../lib/file"
 import { detectDriverByFiletype } from "../drivers/index"
 import { appArguments } from "../lib/args"
-const consoleTable = require('console.table');
+require('console.table');
 
 function checkLogTypes () {
   log("debug", "Checking log type...", true)
@@ -55,7 +55,7 @@ export default async (): Promise<void> => {
 
   logAppend("debug", "OK")
 
-  console.log("\nScan is done. Following fields are found:\n"+
+  console.log("\nScan is done.\n"+
     `Lines scanned: ${lineCounter}\n`+
     `Sensitive values found: ${dataCounter}\n`+
     `\nUnique sensitive values for each field is below:\n`);
@@ -67,7 +67,7 @@ export default async (): Promise<void> => {
       "Field name": fieldInfo[0].parentKey ? fieldInfo[0].parentKey : fieldName,
       "Sensitive Data Type": field.label,
       "Field Sensitivity": sensitivities[field.sensitivity],
-      "Value": fieldInfo[0].value,
+      "Sensitive Value": fieldInfo[0].value,
     })
   }
   console.table(resultsTable)
