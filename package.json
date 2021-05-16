@@ -4,6 +4,9 @@
   "author": "Yasin Aydin <yasin@yasinaydin.net>",
   "license": "MIT",
   "main": "dist/app.js",
+  "engines": {
+    "node": ">=14.0"
+  },
   "scripts": {
     "test": "jest",
     "coverage": "jest --coverage",
