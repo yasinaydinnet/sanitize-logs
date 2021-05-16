@@ -71,6 +71,5 @@ export function detectSensitiveFields(values: Object) {
     buildSensitiveFields(compositeFields, compositeValues, result, fieldName)
   }
 
-  // console.log("result");console.log(result)
   return result
 }
