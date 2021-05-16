@@ -40,7 +40,7 @@ client_ip   IP Address           2: Unique Personal  1.2.3.4
 ## Development
 
 Prequisites:
-- Node.js
+- Node.js >= 16.0.0
 
 To run the project:
 ```sh
@@ -69,7 +69,7 @@ npm run coverage
 which should create an output like:
 ```
 $ npm run coverage
-> logsanitizer@1.0.0 coverage
+> sanitize-logs@1.0.0 coverage
 > jest --coverage
  PASS  src/lib/fields.test.ts
  PASS  src/drivers/logagent.test.ts
@@ -93,19 +93,18 @@ Ran all test suites.
 ```
 
 ## Sensitivity Levels
-- Personal secret (passwords)
-- Personal unique ID (ID code, email)
-- PII (zip code, name, surname etc)
+- 3: Personal secret (passwords)
+- 2: Personally unique ID (ID code, email)
+- 1: PII (zip code, name, surname etc)
 - 0: public
 
 ## Future Work
 
 Packaging:
-- OS packages like for Arch Linux
-- npx-style one line runs
 - compiling/packaging into one file (executable?)
-- specify engine and npm version
-- publish as npm package
 
-Documentation
-- Add sample screenshots
+- publish as npm package
+- npx-style one line runs
+
+
+publish / typescript / npx
