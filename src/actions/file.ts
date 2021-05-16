@@ -5,6 +5,9 @@ import { appArguments } from "../lib/args"
 require('console.table');
 
 function checkLogTypes () {
+  console.log(`Source file is: ${appArguments.file}`)
+  log("debug", "Source type is: file")
+
   log("debug", "Checking log type...", true)
 
   if (!appArguments.type) {
@@ -70,10 +73,6 @@ export default async (): Promise<void> => {
       "Sensitive Value": fieldInfo[0].value,
     })
   }
-  console.table(resultsTable)
 
-  if (appArguments.read_only) {
-    log("log", "App started with read only flag, not doing any changes")
-    return
-  }
+  console.table(resultsTable)
 }

@@ -28,7 +28,7 @@ interface FieldTypes {
   [key: string]: FieldType
 }
 
-type LogLevel = "error" | "debug" | "log"
+type LogLevel = "error" | "debug" | "info"
 
 interface SensitiveFields {
   [key: string]: FieldType|Function

@@ -10,8 +10,10 @@ export function logAppend(logLevel: LogLevel, message: string) {
 export function log(logLevel: LogLevel, message: string, appendable: boolean = false) {
   if (logLevel == "debug" && !appArguments.debug) return
 
-  let output = `[${logLevel}] ${message}`
-  if (logLevel == "error") output = "\n" + output
+  let prefix = `[${logLevel}]`.padEnd(7,' ')
+  if (logLevel == "error") prefix = "\n" + prefix
+
+  const output = `${prefix} ${message}`
 
   if (appendable) process.stdout.write(output)
   else console[logLevel](output)

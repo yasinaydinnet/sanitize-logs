@@ -4,11 +4,13 @@ const program = new Command()
 
 if (process.env.NODE_ENV != "test") {
   program
-    .option('-r, --read_only', 'read only mode (does not modify logs)')
+    .option('--testrun', 'test run for an nginx logfile')
     .option('-d, --debug', 'output extra debugging')
     .option('-f, --file <logfile>', 'log file path')
     .option('-t, --type <logtypetype>', 'log type (-T to list all types)')
-    // .option('-T, --list_types', 'list log types') // not implemented
+    // Not implemented
+    // .option('-r, --read_only', 'read only mode (does not modify logs)')
+    // .option('-T, --list_types', 'list log types')
 
   program.parse(process.argv)
 }
