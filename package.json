@@ -1,6 +1,6 @@
 {
   "name": "sanitize-logs",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "author": "Yasin Aydin <yasin@yasinaydin.net>",
   "license": "MIT",
   "main": "dist/app.js",
@@ -9,6 +9,10 @@
   "engines": {
     "node": ">=14.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yasinaydinnet/sanitize-logs.git"
+  },  
   "scripts": {
     "prepare": "tsc",
     "test": "jest",
