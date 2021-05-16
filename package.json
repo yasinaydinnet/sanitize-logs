@@ -1,11 +1,11 @@
 {
-  "name": "@yasinaydin/logsanitizer",
-  "version": "1.0.0",
+  "name": "sanitize-logs",
+  "version": "1.0.1",
   "author": "Yasin Aydin <yasin@yasinaydin.net>",
   "license": "MIT",
   "main": "dist/app.js",
   "types": "dist/app.d.ts",
-  "bin": "bin/logsanitizer.sh",
+  "bin": "bin/app.sh",
   "engines": {
     "node": ">=14.0"
   },
