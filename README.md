@@ -56,8 +56,8 @@ Prequisites:
 
 To install the project:
 ```sh
-git clone git@github.com:yasinaydinnet/log-sanitizer-poc.git
-cd log-sanitizer-poc
+git clone git@github.com:yasinaydinnet/sanitize-logslog-sanitizer-poc.git
+cd sanitize-logs
 npm install
 npm run build
 ```
