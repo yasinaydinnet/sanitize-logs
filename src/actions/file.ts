@@ -30,7 +30,7 @@ export default async (): Promise<void> => {
   log("debug", "Analyzing log file and determining fields...", true)
   const lines = fileContents.split(/\r?\n/)
 
-  let result: any = {}
+  let result: object = {}
   let lineCounter = 0
   let dataCounter = 0
   for await (const line of lines) {
@@ -39,7 +39,7 @@ export default async (): Promise<void> => {
 
     const parsedLine = await driver.parseLine(line, "nginx")
 
-    const sensitiveFields = driver.detectSensitiveFields(parsedLine)
+    const sensitiveFields: object = driver.detectSensitiveFields(parsedLine)
     for (const [key, value] of Object.entries(sensitiveFields)) {
       dataCounter++
       result[key] ||= []
