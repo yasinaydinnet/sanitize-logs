@@ -1,8 +1,10 @@
 import { appArguments, hasAppArguments } from "./lib/args"
-import { log, logAppend } from "./lib/log"
+import { log } from "./lib/log"
 import FileAction from "./actions/file"
+import { resolve } from "path"
 
 const PACKAGE_VERSION = require('../package.json').version;
+const TEST_FILE = resolve(__dirname, "../test/fixtures/nginx-accesslogs.txt")
 
 const main = async () => {
   console.log(`logsanitizer@${PACKAGE_VERSION}`)
@@ -16,7 +18,7 @@ const main = async () => {
     log("debug", "Started in unattended mode")
 
     if (appArguments.testrun) {
-      appArguments.file = "test/fixtures/nginx-accesslogs.txt"
+      appArguments.file = TEST_FILE
       appArguments.type = "nginx"
     }
 

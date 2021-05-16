@@ -1,6 +1,6 @@
 {
   "name": "sanitize-logs",
-  "version": "1.0.15",
+  "version": "1.0.18",
   "author": "Yasin Aydin <yasin@yasinaydin.net>",
   "license": "MIT",
   "main": "dist/app.js",

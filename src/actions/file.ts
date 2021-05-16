@@ -5,7 +5,7 @@ import { appArguments } from "../lib/args"
 require('console.table');
 
 function checkLogTypes () {
-  console.log(`Source file is: ${appArguments.file}`)
+  log("info", `Source file is: ${appArguments.file}`)
   log("debug", "Source type is: file")
 
   log("debug", "Checking log type...", true)

@@ -1,22 +1,34 @@
-# Log Sanitizer
+# sanitize-logs
 
-Log sanitization tool PoC app
+Unattended log sanitization tool PoC app
 
-## Usage - Unattended
+## Usage
 
-Interactive is not coded yet. To see options for unattended, run as:
+Requirements: [npm](nodejs.org/en/download)
+
+Run via `npx`:
 ```sh
-node . -h
+npx sanitize-logs --type nginx --file nginx-log-file
 ```
 
-To run on sample data:
+Or install and run via `npm global`:
 ```sh
-node . -f test/fixtures/nginx-accesslogs.txt  -t nginx -d
+npm i -g sanitize-logs
+sanitize-logs --type nginx --file nginx-log-file
+```
+
+### Sample Data
+To run using sample data, type:
+```sh
+npx sanitize-logs --testrun --debug
 ```
 which should produce an output like below:
 ```
-$ node . -d -f test/fixtures/nginx-accesslogs.txt  -t nginx
+$ sanitize-logs --testrun --debug
+logsanitizer@1.0.18
+[debug] Debug mode enabled
 [debug] Started in unattended mode
+[info]  Source file is: .../sanitize-logs/test/fixtures/nginx-accesslogs.txt
 [debug] Source type is: file
 [debug] Checking log type... nginx
 [debug] Detecting driver... logAgent
@@ -42,7 +54,7 @@ client_ip   IP Address           2: Unique Personal  1.2.3.4
 Prequisites:
 - Node.js >= 16.0.0
 
-To run the project:
+To install the project:
 ```sh
 git clone git@github.com:yasinaydinnet/log-sanitizer-poc.git
 cd log-sanitizer-poc
@@ -57,12 +69,12 @@ npm run watch
 
 ### Automated Tests
 
-To run tests, run:
+To run tests, type:
 ```sh
 npm test
 ```
 
-To run code coverage, run:
+To run code coverage, type:
 ```sh
 npm run coverage
 ```
@@ -93,18 +105,8 @@ Ran all test suites.
 ```
 
 ## Sensitivity Levels
+
 - 3: Personal secret (passwords)
 - 2: Personally unique ID (ID code, email)
 - 1: PII (zip code, name, surname etc)
 - 0: public
-
-## Future Work
-
-Packaging:
-- compiling/packaging into one file (executable?)
-
-- publish as npm package
-- npx-style one line runs
-
-
-publish / typescript / npx
